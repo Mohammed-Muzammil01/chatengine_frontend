@@ -1,3 +1,9 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: lalezar;
+}
 .App {
   text-align: center;
 }
@@ -35,4 +41,36 @@
   to {
     transform: rotate(360deg);
   }
+}
+.header{
+  background-color: #f9f7ec;
+  min-height: 8vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 22px;
+}
+.header .logo{
+  margin: 2rem;
+  color: #3f3b4a;
+}
+.header .name{
+  margin: 2rem;
+  font-size: xx-large;
+  
+}
+.header .signUp{
+  margin: 2rem;
+  padding: 8px;
+  border: 2px solid green;
+  border-radius: 8px;
+}
+.header .signUp a{
+  text-decoration: none;
+  color: #3f3b4a;
+  text-decoration-style: none;
+}
+.border-green{
+  border: 2px solid green;
 }
