@@ -1,76 +1,76 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: lalezar;
 }
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-.header{
+.header {
   background-color: #f9f7ec;
   min-height: 8vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: row; 
   align-items: center;
   justify-content: space-between;
   font-size: 22px;
+  text-align: center; 
 }
-.header .logo{
-  margin: 2rem;
-  color: #3f3b4a;
+
+.header .logo,
+.header .name,
+.header .signUp {
+  margin: 2rem; 
 }
-.header .name{
-  margin: 2rem;
-  font-size: xx-large;
-  
+
+.header .name {
+  font-size: x-large; 
 }
-.header .signUp{
-  margin: 2rem;
-  padding: 8px;
+
+.header .signUp {
+  padding: 8px; 
   border: 2px solid green;
   border-radius: 8px;
 }
-.header .signUp a{
+
+.header .logo {
+  order: 1; /* Change order to place logo at the bottom on small screens */
+}
+
+.header .name {
+  order: 2; /* Change order to place name above logo on small screens */
+}
+
+.header .signUp {
+  order: 3; /* Keep signUp button at the bottom on small screens */
+  border: 2px solid green;
+}
+
+.header .signUp a {
   text-decoration: none;
   color: #3f3b4a;
   text-decoration-style: none;
+  
 }
-.border-green{
-  border: 2px solid green;
+
+
+/* Media query for small screens */
+@media only screen and (max-width: 600px) {
+  .header {
+    flex-direction: row;
+
+  }
+
+  .header .logo,
+  .header .name,
+  .header .signUp {
+    margin: 0.5rem;
+  }
+
+  .header .name {
+    font-size: x-large;
+  }
+
+  .header .signUp {
+    padding: 4px;
+  }
 }

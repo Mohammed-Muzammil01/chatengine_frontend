@@ -3,22 +3,20 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <div className='d-flex justify-content-center align-items-center'>
-        <section>
-          <div className='header'>
+          <section>
+          <section className='header'>
             <div className='logo'>
               logo
             </div>
-            <div className='name text-green'>
+            <div className='name '>
               website name
             </div>
-            <div className='signUp btn border-green'>
+            <div className='signUp '>
               <a href='#'>Sign Up / Log In</a>
             </div>
-          </div>
+          </section>
         </section>
       </div>
-    </div>
   );
 }
 
