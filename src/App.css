@@ -98,6 +98,7 @@ a{
   }
 }
 
+
 /* Page 2 */
 
 .container{
@@ -152,4 +153,43 @@ a{
 
 .card h3{
   margin-top: 6px;
+
+/* section-2 */
+
+.section-2{
+  height: 50vh;
+  background-color: var(--customBlue);
+  padding: 0 5%;
+  text-align: center;
+  color: var(--customGreen);
+}
+
+.features{
+  padding: 1rem;
+}
+.card-container{
+  display: flex;;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 5%; border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.feature-card{
+  width: 30%;
+  height: 35vh;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease-in-out ;
+  /* border: 5px solid var(--customGreen); */
+  cursor: pointer;
+}
+.feature-card:hover{
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  background-color: var(--customGreen);
+  color: white;
 }
