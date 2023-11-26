@@ -48,5 +48,13 @@
   text-align: center;
   color: var(--customBlue);
 }
+.btn-primary {
+  transition: background-color 0.3s, color 0.3s;
+}
 
+.btn-primary:hover {
+  background-color: #ffffff; /* Change to your desired hover background color */
+  color: #ffffff; /* Change to your desired hover text color */
+  cursor: pointer;
+}
 
