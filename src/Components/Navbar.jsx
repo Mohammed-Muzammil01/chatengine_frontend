@@ -3,11 +3,12 @@ import Logo from '../assets/CElogo1.png'
 import { Link } from 'react-router-dom'
 
 function Navbar() {
-  
+
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
+    console.log(isMobile);
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
@@ -15,7 +16,11 @@ function Navbar() {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [isMobile]);
+
+const toggleMenu = () => {
+  setMenuOpen(!isMenuOpen);
+}
 
   return (
     <>
@@ -23,30 +28,54 @@ function Navbar() {
         <section className='header'>
 
           <nav className='d-flex flex-row justify-content-center align-items-center'>
-            {/* <button className='hamburger' onClick={setMenuOpen(!isMenuOpen)}>☰</button> */}
-          <ul className='nav-items d-flex flex-row align-items-center justify-content-center mb-0'>
-            <li>
-              <Link to="/">Create</Link>
-            </li>
-            <li>
-              <Link to="/">Features</Link>
-            </li>
-            <li>
-              <Link to="/">Contact</Link>
-            </li>
-            <li id='login-link'>
-              <Link to="/">Sign-up / Login</Link>
-            </li>
-          </ul>
+              {
+                isMobile ? <>
+                  <div className='d-flex flex-column align-items-start'>
+                  {
+                    isMenuOpen ? <button id='hamburger' onClick={toggleMenu}>&times;</button>
+                    : <button id='hamburger' onClick={toggleMenu}>☰</button>
+                  }
+                  {
+                    isMenuOpen ? <>
+                      <ul className='nav-menu2 nav-items d-flex flex-column align-items-start justify-content-center mb-0'>
+                    <li>
+                      <Link to="/">Create</Link>
+                    </li>
+                    <li>
+                      <Link to="/">Features</Link>
+                    </li>
+                    <li>
+                      <Link to="/">Contact</Link>
+                    </li>
+                    <li id='login-link'>
+                      <Link to="/">Sign-up / Login</Link>
+                    </li>
+                  </ul>
+                    </> : ''
+                  }
+                  </div>
+                </>
+                  : <ul className='nav-items d-flex flex-row align-items-center justify-content-center mb-0'>
+                    <li>
+                      <Link to="/">Create</Link>
+                    </li>
+                    <li>
+                      <Link to="/">Features</Link>
+                    </li>
+                    <li>
+                      <Link to="/">Contact</Link>
+                    </li>
+                  </ul>
+              }
           </nav>
-
-
           <div className='logo'>
-            <img style={{ height: "60px", paddingTop: "10px" }} src={Logo} alt='logo' />
+            <img style={{ height: "60px" }} src={Logo} alt='logo' />
           </div>
-          <div className='signUp'>
-            <Link href='/'>Sign Up / Log In</Link>
-          </div>
+          {
+            !isMobile ? <div className='signUp'>
+              <Link href='/'>Sign Up / Log In</Link>
+            </div> : ''
+          }
         </section>
       </div>
     </>

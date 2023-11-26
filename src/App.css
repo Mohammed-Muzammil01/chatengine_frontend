@@ -24,13 +24,18 @@ a{
   display: flex;
   flex-direction: row; 
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   font-size: 22px;
   text-align: center; 
   padding: 10px;
 }
 
+@media (max-width: 768px){
+  .header{
+    height: auto;
+  }
+}
 
 .header .signUp {
   padding: 6px; 
@@ -52,12 +57,20 @@ a{
 
 .nav-items li{
   list-style: none;
-  margin: 0 8px;
+  margin: 6px 12px;
+  margin-left: 0;
   font-size: 15px;
 }
 
 .nav-items a:hover{
   color: var(--customWhite);
+}
+
+#hamburger{
+  border: none;
+  background-color: transparent;
+  color: var(--customGreen);
+  outline: none;
 }
 
 /* section 1 */
@@ -68,6 +81,7 @@ a{
   text-align: center;
   color: var(--customBlue);
 }
+
 .btn-primary {
   transition: background-color 0.3s, color 0.3s;
 }
@@ -78,6 +92,10 @@ a{
   cursor: pointer;
 }
 
-
+@media (max-width: 768px){
+  .nav-menu2{
+    display: none;
+  }
+}
 
 

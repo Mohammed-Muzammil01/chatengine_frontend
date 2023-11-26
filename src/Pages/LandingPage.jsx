@@ -5,31 +5,32 @@ import { Link } from 'react-router-dom'
 function LandingPage() {
   return (
     <>
-        <Navbar />
+      <Navbar />
 
-        <section style={{ paddingTop: "4vh" }} className='section-1 d-flex justify-content-center align-items-center flex-column'>
-        <h1 className='text-center mb-4' style={{ fontSize: "2.5rem",position:"absolute",left:"1%", right:"1%", zIndex:"10", }}>AI at your service!</h1>
+      <section style={{ paddingTop: "4vh" }} className='section-1 d-flex flex-column align-items-center'>
+        <h1 className='text-center' style={{ fontSize: "2.5rem", position: "absolute", left: "1%", right: "1%", zIndex: "10", }}>AI at your service</h1>
         <div className="position-relative">
-          <img style={{ height: "48vh", width: "auto", paddingTop: "30px" }} src={demo1} alt='illustration1' className="img-fluid" />
+          <img style={{ height: "52vh", width: "auto", paddingTop: "30px" }} src={demo1} alt='illustration1' className="img-fluid" />
         </div>
-        <div className='text-center mb-4' style={{ width: "70%", margin: "auto" }}>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad ipsa aliquid exercitationem enim molestias quisquam voluptatum at nihil recusandae, voluptate rerum sed minima obcaecati, ab quam ratione distinctio ullam aut.
+        <div className='text-center m-4' style={{ width: "70%", marginRight: "auto", marginLeft: "auto" }}>
+          Create commercial or personal chatbots, such as chatGPT, to optimize your workload, increase efficiency and cut costs.
         </div>
         <Link to="/">
           <button
             className='btn-primary'
             style={{
-              marginTop: "20px",
-              padding: "20px",
+              marginTop: "10px",
+              padding: "10px",
               fontSize: "1.2rem",
               borderRadius: "12px",
               backgroundColor: "#223c4b",
-              border: "2px solid black",
+              border:"none",
+              // border: "2px solid black",
               color: "var(--customGreen)",
               transition: "background-color 0.3s, color 0.3s",
             }}
           >
-            Get Started
+            Create ChatBot
           </button>
         </Link>
       </section>
