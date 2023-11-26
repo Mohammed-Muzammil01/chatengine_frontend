@@ -13,6 +13,11 @@
   font-family: 'Audiowide';
 }
 
+a{
+  text-decoration: none;
+  color: var(--customGreen);
+}
+
 .header {
   background-color: var(--customBlue);
   height: 10vh;
@@ -40,6 +45,21 @@
   font-size: 2vh;
 }
 
+.nav-items a{
+  text-decoration: none;
+  display: inline;
+}
+
+.nav-items li{
+  list-style: none;
+  margin: 0 8px;
+  font-size: 15px;
+}
+
+.nav-items a:hover{
+  color: var(--customWhite);
+}
+
 /* section 1 */
 .section-1{
   height: 90vh;
@@ -48,5 +68,8 @@
   text-align: center;
   color: var(--customBlue);
 }
+
+
+
 
 
