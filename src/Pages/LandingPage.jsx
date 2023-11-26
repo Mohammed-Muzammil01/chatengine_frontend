@@ -1,7 +1,9 @@
 import React from 'react'
 import Navbar from '../Components/Navbar'
 import demo1 from '../assets/demo1.svg'
+import card from '../Components/Card'
 import { Link } from 'react-router-dom'
+import Card from '../Components/Card'
 function LandingPage() {
   return (
     <>
@@ -33,6 +35,17 @@ function LandingPage() {
             Create ChatBot
           </button>
         </Link>
+      </section>
+      <section className='section-2'>
+          <h1 className='features'>
+            Features
+          </h1>
+          <div className='card-container'>
+            <Card className="feature-card"/>
+            <Card className="feature-card"/>
+            <Card className="feature-card"/>
+            <Card className="feature-card"/>
+          </div>
       </section>
     </>
   )
