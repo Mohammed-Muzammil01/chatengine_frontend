@@ -1,76 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Lalezar&display=swap');
+
+:root {
+  --customBlue: #223c4b;   
+  --customGreen: #14d8b1;  
+  --customWhite: #e2e0da;      
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Lalezar';
+  font-family: 'Audiowide';
 }
+
 .header {
-  background-color: #f9f7ec;
-  height: 12vh;
+  background-color: var(--customBlue);
+  height: 10vh;
   display: flex;
   flex-direction: row; 
   align-items: center;
   justify-content: space-between;
+  align-items: center;
   font-size: 22px;
   text-align: center; 
+  padding: 10px;
 }
 
-.header .logo,
-.header .name,
-.header .signUp {
-  margin: 2rem; 
-}
-
-.header .name {
-  font-size: x-large; 
-}
 
 .header .signUp {
-  padding: 8px; 
-  border: 2px solid green;
+  padding: 6px; 
+  line-height: 15px;
+  border: 2px solid var(--customGreen);
   border-radius: 8px;
-}
-
-.header .logo {
-  order: 1; /* Change order to place logo at the bottom on small screens */
-}
-
-.header .name {
-  order: 2; /* Change order to place name above logo on small screens */
-}
-
-.header .signUp {
-  order: 3; /* Keep signUp button at the bottom on small screens */
-  border: 2px solid green;
 }
 
 .header .signUp a {
   text-decoration: none;
-  color: #3f3b4a;
-  text-decoration-style: none;
-  
+  color: var(--customGreen);
+  font-size: 2vh;
+}
+
+/* section 1 */
+.section-1{
+  height: 90vh;
+  background-color: var(--customWhite);
+  padding: 0 5%;
+  text-align: center;
+  color: var(--customBlue);
 }
 
 
-/* Media query for small screens */
-@media only screen and (max-width: 600px) {
-  .header {
-    flex-direction: row;
-
-  }
-
-  .header .logo,
-  .header .name,
-  .header .signUp {
-    margin: 0.5rem;
-  }
-
-  .header .name {
-    font-size: x-large;
-  }
-
-  .header .signUp {
-    padding: 4px;
-  }
-}
