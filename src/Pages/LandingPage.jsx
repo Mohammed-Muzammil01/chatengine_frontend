@@ -37,15 +37,15 @@ function LandingPage() {
         </Link>
       </section>
       <section className='section-2'>
-          <h1 className='features'>
-            Features
-          </h1>
-          <div className='card-container'>
-            <Card className="feature-card"/>
-            <Card className="feature-card"/>
-            <Card className="feature-card"/>
-            <Card className="feature-card"/>
+        <h1 className='features text-center mb-4'>Features</h1>
+        <div className='container card-container'>
+          <div className='row justify-content-around'>
+            <Card className="feature-card col-lg-3 col-md-6 col-sm-12" />
+            <Card className="feature-card col-lg-3 col-md-6 col-sm-12" />
+            <Card className="feature-card col-lg-3 col-md-6 col-sm-12" />
+            <Card className="feature-card col-lg-3 col-md-6 col-sm-12" />
           </div>
+        </div>
       </section>
     </>
   )
