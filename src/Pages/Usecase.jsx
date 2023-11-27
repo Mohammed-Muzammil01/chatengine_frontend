@@ -21,9 +21,6 @@ export default function UseCase() {
                     <h3>Customer Service Bot</h3>
                     <h5>Create a AI-Driven Chatbot for customer care inquires</h5>
                     </div>
-                </div>
-
-                <div className="cards">
                     <div className="card">
                     <IoFastFoodOutline className="case"/>
                     <h3>Restaurant Bot</h3>
@@ -35,6 +32,10 @@ export default function UseCase() {
                         <h5>Create your own usecase</h5>
                     </div>
                 </div>
+
+                {/* <div className="cards">
+                    
+                </div> */}
             </div>
         </>
     )

@@ -24,11 +24,11 @@ a{
   display: flex;
   flex-direction: row; 
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   font-size: 22px;
   text-align: center; 
-  padding: 10px;
+  padding: 10px 30px;
 }
 
 @media (max-width: 768px){
@@ -113,23 +113,24 @@ a{
 .cards{
   height: auto;
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   margin: 20px;
   text-align: center;
 }
 
 .card{
-  margin-bottom: 20px;
   background-color: white;
-  height: 300px;
-  width:300px;
-  border:5px solid var(--customGreen);
+  height: 350px;
+  width: 350px;
+  border: 5px solid var(--customGreen);
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: var(--customGreen);
-  margin: 10px;
+  margin: 25px;
   padding: 10px;
 }
 .card:hover{

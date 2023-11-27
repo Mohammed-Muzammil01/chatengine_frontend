@@ -68,7 +68,7 @@ const toggleMenu = () => {
                   </ul>
               }
           </nav>
-          <div className='logo'>
+          <div style={{marginRight:"5vw"}} className='logo'>
             <img style={{ height: "60px" }} src={Logo} alt='logo' />
           </div>
           {
