@@ -1,10 +1,9 @@
 import React from 'react'
 import Navbar from '../Components/Navbar'
 import demo1 from '../assets/demo1.svg'
+import illustration2 from '../assets/illustration-2.svg'
 import { Link } from 'react-router-dom'
 import { TbHandClick } from "react-icons/tb";
-import { TbMessageLanguage } from "react-icons/tb";
-import { GrLanguage } from "react-icons/gr";
 import { MdLanguage } from "react-icons/md";
 import { MdOutlineSupportAgent } from "react-icons/md";
 import { VscSettings } from "react-icons/vsc";
@@ -57,6 +56,21 @@ function LandingPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+      <section className='sec3'>
+        <h1  style={{fontSize:"70px"}}>How to use</h1>
+        <div className='section-3'>
+        <img src={illustration2} alt='illustration-2' className=" illustration2"/>
+        <div className='d-flex flex-column align-items-center'>
+          
+          <ul className='steps'>
+            <li>Click on <Link to="/">Create ChatBot</Link></li> {/* give the link for the button */}
+            <li>Select your domain</li>
+            <li>Customise your ChatBot</li>
+            <li>Deploy your ChatBot</li>
+          </ul>
+        </div>
         </div>
       </section>
     </>

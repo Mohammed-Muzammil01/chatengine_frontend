@@ -39,7 +39,7 @@ const toggleMenu = () => {
                     isMenuOpen ? <>
                       <ul className='nav-menu2 nav-items d-flex flex-column align-items-start justify-content-center mb-0'>
                     <li>
-                      <Link to="/">Create</Link>
+                      <Link to="/usecase">Create</Link>
                     </li>
                     <li>
                       <Link to="/">Features</Link>
@@ -57,7 +57,7 @@ const toggleMenu = () => {
                 </>
                   : <ul className='nav-items d-flex flex-row align-items-center justify-content-center mb-0'>
                     <li>
-                      <Link to="/">Create</Link>
+                      <Link to="/usecase">Create</Link>
                     </li>
                     <li>
                       <Link to="/">Features</Link>
