@@ -8,9 +8,9 @@ export default function UseCase() {
             <p className="usecase-heading">Choose your usecase:</p>
             <div className="container">
                 <div className="cards">
-                    <div className="card">
+                    <div className="caqrd">
                     <FaBriefcase className="case"/>
-                    <h3>Portfolio</h3>
+                    <h3>Portfolio Bot</h3>
                     </div>
                     <div className="card">
                         <p>Lorem ipsum dolor sit amet consectetur.</p>
