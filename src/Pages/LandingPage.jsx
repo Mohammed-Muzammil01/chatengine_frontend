@@ -1,9 +1,13 @@
 import React from 'react'
 import Navbar from '../Components/Navbar'
 import demo1 from '../assets/demo1.svg'
-import card from '../Components/Card'
 import { Link } from 'react-router-dom'
-import Card from '../Components/Card'
+import { TbHandClick } from "react-icons/tb";
+import { TbMessageLanguage } from "react-icons/tb";
+import { GrLanguage } from "react-icons/gr";
+import { MdLanguage } from "react-icons/md";
+import { MdOutlineSupportAgent } from "react-icons/md";
+import { VscSettings } from "react-icons/vsc";
 function LandingPage() {
   return (
     <>
@@ -40,10 +44,18 @@ function LandingPage() {
         <h1 className='features text-center mb-4'>Features</h1>
         <div className='container card-container'>
           <div className='row justify-content-around'>
-            <Card className="feature-card col-lg-3 col-md-6 col-sm-12" />
-            <Card className="feature-card col-lg-3 col-md-6 col-sm-12" />
-            <Card className="feature-card col-lg-3 col-md-6 col-sm-12" />
-            <Card className="feature-card col-lg-3 col-md-6 col-sm-12" />
+            {[
+              { icon: <TbHandClick className='icon' />, title: 'Easy To Use', description: 'User friendly interface' },
+              { icon: <MdLanguage className='icon' />, title: 'Multi Language', description: 'Supports multiple languages' },
+              { icon: <MdOutlineSupportAgent className='icon' />, title: 'Customer Support', description: '24/7 customer support' },
+              { icon: <VscSettings className='icon' />, title: 'Customizable', description: 'Customize your chatbot to your needs' },
+            ].map((feature, index) => (
+              <div key={index} className="feature-card col-lg-3 col-md-3 col-sm-6">
+                {feature.icon}
+                <h3>{feature.title}</h3>
+                <p>{feature.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
