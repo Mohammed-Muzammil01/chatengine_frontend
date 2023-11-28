@@ -8,6 +8,13 @@ import { MdLanguage } from "react-icons/md";
 import { MdOutlineSupportAgent } from "react-icons/md";
 import { VscSettings } from "react-icons/vsc";
 function LandingPage() {
+  const scrollToCreateChatBot = () => {
+    const createChatBotSection = document.getElementById('CreateChatBot');
+    if (createChatBotSection) {
+      createChatBotSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
       <Navbar />
@@ -15,12 +22,12 @@ function LandingPage() {
       <section style={{ paddingTop: "4vh" }} className='section-1 d-flex flex-column align-items-center'>
         <h1 className='text-center' style={{ fontSize: "2.5rem", position: "absolute", left: "1%", right: "1%", zIndex: "10", }}>AI at your service</h1>
         <div className="position-relative">
-          <img style={{ height: "52vh", width: "auto", paddingTop: "30px" }} src={demo1} alt='illustration1' className="img-fluid" />
+          <img id='CreateChatBot' style={{ height: "52vh", width: "auto", paddingTop: "30px" }} src={demo1} alt='illustration1' className="img-fluid" />
         </div>
         <div className='text-center m-4' style={{ width: "70%", marginRight: "auto", marginLeft: "auto" }}>
           Create commercial or personal chatbots, such as chatGPT, to optimize your workload, increase efficiency and cut costs.
         </div>
-        <Link to="/">
+        <Link to="/" >
           <button
             className='btn-primary'
             style={{
@@ -65,13 +72,28 @@ function LandingPage() {
         <div className='d-flex flex-column align-items-center'>
           
           <ul className='steps'>
-            <li>Click on <Link to="/">Create ChatBot</Link></li> {/* give the link for the button */}
+            <li>Click on <Link onClick={scrollToCreateChatBot}>Create ChatBot</Link></li> {/* give the link for the button */}
             <li>Select your domain</li>
             <li>Customise your ChatBot</li>
             <li>Deploy your ChatBot</li>
           </ul>
         </div>
         </div>
+      </section>
+      <section className="section-4">
+        <div className="priceCard">
+          <h1>₹0</h1>
+          <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quisquam sed doloremque ipsam praesentium dolor qui quia sapiente veritatis nam.</h3>
+        </div>
+        <div className="priceCard">
+          <h1>₹0</h1>
+          <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse aperiam nobis, rem nihil itaque totam dolore reprehenderit id maxime perferendis.</h3>
+        </div>
+        <div className="priceCard">
+          <h1>₹0</h1>
+          <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut nemo dolorum non est veritatis sunt ducimus asperiores sint quod labore.</h3>
+        </div>
+  
       </section>
     </>
   )
