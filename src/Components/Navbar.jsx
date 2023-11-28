@@ -69,7 +69,7 @@ const toggleMenu = () => {
               }
           </nav>
           <div style={{marginRight:"5vw"}} className='logo'>
-            <img style={{ height: "60px" }} src={Logo} alt='logo' />
+            <Link to="/"><img style={{ height: "60px" }} src={Logo} alt='logo' /></Link>
           </div>
           {
             !isMobile ? <div className='signUp'>

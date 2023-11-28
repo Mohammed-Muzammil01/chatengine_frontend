@@ -86,11 +86,11 @@ function LandingPage() {
           <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quisquam sed doloremque ipsam praesentium dolor qui quia sapiente veritatis nam.</h3>
         </div>
         <div className="priceCard">
-          <h1>₹0</h1>
+          <h1>₹100</h1>
           <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse aperiam nobis, rem nihil itaque totam dolore reprehenderit id maxime perferendis.</h3>
         </div>
         <div className="priceCard">
-          <h1>₹0</h1>
+          <h1>₹500</h1>
           <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut nemo dolorum non est veritatis sunt ducimus asperiores sint quod labore.</h3>
         </div>
   
