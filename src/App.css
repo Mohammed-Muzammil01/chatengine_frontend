@@ -381,6 +381,41 @@ a {
         width: calc(100% - 2rem);
     }
 }
+/* section-5 */
+.section-5 {
+    background-color: var(--customWhite);
+    padding: 4% 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    color: var(--customBlue);
+}
+.section-5 img{
+    width: 70vh;
+}
+.aboutUsPara{
+    font-size: 20px;
+}
+@media (max-width: 986px) {
+    .section-5 {
+        flex-direction: column;
+        height: auto;
+    }
+    .section-5 img{
+        width: calc(50vh - 2rem);
+    }
+}
+
+@media (max-width: 576px) {
+    .section-5 {
+        flex-direction: column;
+        height: auto;
+    }
+    .section-5 img{
+         width: calc(50vh - 2rem);
+    }
+}
 
 /* Chatbot CSS */
 /* Chatbot.css */

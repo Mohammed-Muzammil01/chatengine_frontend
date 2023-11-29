@@ -7,6 +7,7 @@ import { TbHandClick } from "react-icons/tb";
 import { MdLanguage } from "react-icons/md";
 import { MdOutlineSupportAgent } from "react-icons/md";
 import { VscSettings } from "react-icons/vsc";
+import illustration3 from '../assets/illustration3.svg'
 function LandingPage() {
   const scrollToCreateChatBot = () => {
     const createChatBotSection = document.getElementById('CreateChatBot');
@@ -72,7 +73,7 @@ function LandingPage() {
         <div className='d-flex flex-column align-items-center'>
           
           <ul className='steps'>
-            <li>Click on <Link onClick={scrollToCreateChatBot}>Create ChatBot</Link></li> {/* give the link for the button */}
+            <li>Click on <Link onClick={scrollToCreateChatBot}>Create ChatBot</Link></li>
             <li>Select your domain</li>
             <li>Customise your ChatBot</li>
             <li>Deploy your ChatBot</li>
@@ -93,7 +94,17 @@ function LandingPage() {
           <h1>₹500</h1>
           <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut nemo dolorum non est veritatis sunt ducimus asperiores sint quod labore.</h3>
         </div>
-  
+      </section>
+      <section className='section-5'>
+           <div>
+            <h1>About Us</h1>
+            <div className='aboutUsPara'>
+              <p>Our mission at ChatEngine is to simplify the chatbot experience for everyone.</p>
+              <p>We're passionate about harnessing the potential of conversational technology to transform digital interactions. Our focus is on creating intelligent and user-friendly chatbots that seamlessly integrate into various domains.</p>
+              <p>Join us on this exciting journey as we explore the endless possibilities of AI.</p>
+            </div>
+          </div>
+          <img src={illustration3} alt='illustration' ></img>
       </section>
     </>
   )
