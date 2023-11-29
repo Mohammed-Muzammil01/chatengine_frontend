@@ -1,4 +1,5 @@
 import Navbar from "../Components/Navbar"
+import Footer from "../Components/footer"
 import { FaBriefcase } from "react-icons/fa";
 import { RiCustomerService2Line } from "react-icons/ri";
 import { IoFastFoodOutline } from "react-icons/io5";
@@ -37,6 +38,7 @@ export default function UseCase() {
                     
                 </div> */}
             </div>
+            <Footer/>
         </>
     )
 }
