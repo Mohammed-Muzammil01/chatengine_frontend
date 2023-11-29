@@ -381,6 +381,18 @@ a {
         width: calc(100% - 2rem);
     }
 }
+/* section-5 */
+.section-5 {
+    background-color: var(--customWhite);
+    padding: 4% 10%;
+    text-align: center;
+    color: var(--customBlue);
+}
+.section-5 img{
+    height: 70vh;
+}
+
+
 
 /* Chatbot CSS */
 /* Chatbot.css */

@@ -7,6 +7,7 @@ import { TbHandClick } from "react-icons/tb";
 import { MdLanguage } from "react-icons/md";
 import { MdOutlineSupportAgent } from "react-icons/md";
 import { VscSettings } from "react-icons/vsc";
+import illustration3 from '../assets/illustration3.svg'
 function LandingPage() {
   const scrollToCreateChatBot = () => {
     const createChatBotSection = document.getElementById('CreateChatBot');
@@ -93,7 +94,12 @@ function LandingPage() {
           <h1>₹500</h1>
           <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut nemo dolorum non est veritatis sunt ducimus asperiores sint quod labore.</h3>
         </div>
-  
+      </section>
+      <section className='section-5'>
+      <div className='d-flex flex-row align-items-center'>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum eos esse voluptatibus quaerat ea fugit ullam asperiores amet provident minus est rem quo magnam modi sit obcaecati temporibus eum et cupiditate alias minima, ad ut voluptates. Sunt facilis earum repellendus dolore magni deserunt eaque distinctio temporibus rerum voluptates, at illum.</p>
+          <img src={illustration3}  ></img>
+        </div>
       </section>
     </>
   )
