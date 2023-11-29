@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from '../Components/Navbar'
+import Footer from '../Components/footer'
 import demo1 from '../assets/demo1.svg'
 import illustration2 from '../assets/illustration-2.svg'
 import { Link } from 'react-router-dom'
@@ -106,6 +107,7 @@ function LandingPage() {
           </div>
           <img src={illustration3} alt='illustration' ></img>
       </section>
+      <Footer />
     </>
   )
 }
