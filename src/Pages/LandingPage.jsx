@@ -73,7 +73,7 @@ function LandingPage() {
         <div className='d-flex flex-column align-items-center'>
           
           <ul className='steps'>
-            <li>Click on <Link onClick={scrollToCreateChatBot}>Create ChatBot</Link></li> {/* give the link for the button */}
+            <li>Click on <Link onClick={scrollToCreateChatBot}>Create ChatBot</Link></li>
             <li>Select your domain</li>
             <li>Customise your ChatBot</li>
             <li>Deploy your ChatBot</li>
@@ -96,10 +96,15 @@ function LandingPage() {
         </div>
       </section>
       <section className='section-5'>
-      <div className='d-flex flex-row align-items-center'>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum eos esse voluptatibus quaerat ea fugit ullam asperiores amet provident minus est rem quo magnam modi sit obcaecati temporibus eum et cupiditate alias minima, ad ut voluptates. Sunt facilis earum repellendus dolore magni deserunt eaque distinctio temporibus rerum voluptates, at illum.</p>
-          <img src={illustration3}  ></img>
-        </div>
+           <div>
+            <h1>About Us</h1>
+            <div className='aboutUsPara'>
+              <p>Our mission at ChatEngine is to simplify the chatbot experience for everyone.</p>
+              <p>We're passionate about harnessing the potential of conversational technology to transform digital interactions. Our focus is on creating intelligent and user-friendly chatbots that seamlessly integrate into various domains.</p>
+              <p>Join us on this exciting journey as we explore the endless possibilities of AI.</p>
+            </div>
+          </div>
+          <img src={illustration3} alt='illustration' ></img>
       </section>
     </>
   )
