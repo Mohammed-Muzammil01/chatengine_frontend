@@ -10,7 +10,7 @@ export default function UseCase() {
         <>
             <Navbar />
             <p className="usecase-heading">Choose your usecase:</p>
-            <div className="container">
+            <div className="cards-container">
                 <div className="cards">
                     <div className="card">
                     <FaBriefcase className="case"/>

@@ -18,21 +18,24 @@
             <div key={index} className='YourChatBot-card'>
                 <div className='left'>
                 <h3>{chatbot.name}</h3>
-                <h3>{chatbot.type}</h3>
-                <h3>{chatbot.systemMessage}</h3>
+                <h5>Chatbot type: {chatbot.type}</h5>
+                <h5>System message: {chatbot.systemMessage}</h5>
                 </div>
                 <div className='right'>
                 <div>
+                    <button>
                     <MdDelete className='delete' />
-                    <p>Delete</p>  
+                    </button>
                 </div>
                 <div>
+                    <button>
                     <FaEdit className='edit' />
-                    <p>Edit</p>  
+                    </button>
                 </div>
                 <div>
+                    <button>
                     <SiChatbot className='chatbot' />
-                    <p>Chat</p>  
+                    </button>
                 </div>
                 </div>
             </div>
