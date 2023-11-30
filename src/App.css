@@ -418,7 +418,6 @@ a {
 }
 
 /* Chatbot CSS */
-/* Chatbot.css */
 
 @keyframes listeningAnimation {
     0% {
@@ -454,17 +453,18 @@ a {
     position: relative;
 }
 
-.header {
-    background-color: #2196f3;
+.chatbot-header {
+    background-color: var(--customBlue);
     color: white;
     text-align: center;
     padding: 10px;
     font-size: 2rem;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
-.logo {
+.chatbot-logo {
     width: 50px;
     height: auto;
 }
@@ -488,15 +488,15 @@ a {
 }
 
 .chatbot-message {
-    background-color: #ffffcc;
+    background-color: var(--customGreen);
     align-self: flex-start;
-    max-width: 25%;
+    max-width: 45%;
 }
 
 .user-input-message {
-    background-color: #dcf8c6;
+    background-color: var(--customWhite);
     align-self: flex-end;
-    margin-left: 75%;
+    margin-left: 55%;
 }
 
 .input-container {

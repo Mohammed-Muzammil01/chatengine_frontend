@@ -1,8 +1,5 @@
-// Chatbot.jsx
-
 import React, { useState, useEffect, useRef } from 'react';
 import Logo from '../assets/logo192.png';
-import './Chatbot.css'; // Import the CSS file
 
 const Chatbot = () => {
     const [messages, setMessages] = useState([]);
@@ -41,8 +38,8 @@ const Chatbot = () => {
     return (
         <div className="chatbot-container">
             <div className="chatbot-box">
-                <div className="header">
-                    <img src={Logo} alt="Logo" className="logo" />
+                <div className="chatbot-header">
+                    <img src={Logo} alt="Logo" className="chatbot-logo" />
                     <h1 className="tittle">Chatbot Name</h1>
                 </div>
                 <div className="messages-container" ref={chatContainerRef}>
