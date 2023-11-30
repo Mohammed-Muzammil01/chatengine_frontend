@@ -38,7 +38,7 @@ function LandingPage() {
               fontSize: "1.2rem",
               borderRadius: "12px",
               backgroundColor: "#223c4b",
-              border:"none",
+              border: "none",
               // border: "2px solid black",
               color: "var(--customGreen)",
               transition: "background-color 0.3s, color 0.3s",
@@ -48,7 +48,7 @@ function LandingPage() {
           </button>
         </Link>
       </section>
-      <section className='section-2'>
+      <section id="feature-section" className='section-2'>
         <h1 className='features text-center mb-4'>Features</h1>
         <div className='container card-container'>
           <div className='row justify-content-around'>
@@ -67,45 +67,45 @@ function LandingPage() {
           </div>
         </div>
       </section>
-      <section className='sec3'>
-        <h1  style={{fontSize:"70px"}}>How to use</h1>
+      <section id='section-3' className='sec3'>
+        <h1 style={{ fontSize: "70px" }}>How to use</h1>
         <div className='section-3'>
-        <img src={illustration2} alt='illustration-2' className=" illustration2"/>
-        <div className='d-flex flex-column align-items-center'>
-          
-          <ul className='steps'>
-            <li>Click on <Link onClick={scrollToCreateChatBot}>Create ChatBot</Link></li>
-            <li>Select your domain</li>
-            <li>Customise your ChatBot</li>
-            <li>Deploy your ChatBot</li>
-          </ul>
-        </div>
+          <img src={illustration2} alt='illustration-2' className=" illustration2" />
+          <div className='d-flex flex-column align-items-center'>
+
+            <ul className='steps'>
+              <li>Click on <Link onClick={scrollToCreateChatBot}>Create ChatBot</Link></li>
+              <li>Select your domain</li>
+              <li>Customise your ChatBot</li>
+              <li>Deploy your ChatBot</li>
+            </ul>
+          </div>
         </div>
       </section>
-      <section className="section-4">
+      <section id='section-4' className="section-4">
         <div className="priceCard">
-          <h1>₹0</h1>
+          <h1 style={{fontSize:"3rem"}}>$0</h1>
           <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quisquam sed doloremque ipsam praesentium dolor qui quia sapiente veritatis nam.</h3>
         </div>
         <div className="priceCard">
-          <h1>₹100</h1>
+          <h1 style={{fontSize:"3rem"}}>$0.99</h1>
           <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse aperiam nobis, rem nihil itaque totam dolore reprehenderit id maxime perferendis.</h3>
         </div>
         <div className="priceCard">
-          <h1>₹500</h1>
+          <h1 style={{fontSize:"3rem"}}>$1.99</h1>
           <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut nemo dolorum non est veritatis sunt ducimus asperiores sint quod labore.</h3>
         </div>
       </section>
-      <section className='section-5'>
-           <div>
-            <h1>About Us</h1>
-            <div className='aboutUsPara'>
-              <p>Our mission at ChatEngine is to simplify the chatbot experience for everyone.</p>
-              <p>We're passionate about harnessing the potential of conversational technology to transform digital interactions. Our focus is on creating intelligent and user-friendly chatbots that seamlessly integrate into various domains.</p>
-              <p>Join us on this exciting journey as we explore the endless possibilities of AI.</p>
-            </div>
+      <section id='section-5' className='section-5'>
+        <div>
+          <h1>About Us</h1>
+          <div className='aboutUsPara'>
+            <p>We are a team of passionate developers driven by the power of artificial intelligence (AI) to revolutionize customer interactions. We are committed to creating intelligent and engaging AI chatbots that seamlessly blend into the everyday lives of businesses and individuals.</p>
+            <p>Our mission is to empower businesses of all sizes with AI-powered solutions that enhance customer service, streamline operations, and foster personalized experiences. We harness the latest advancements in AI technology, coupled with our deep understanding of human language and behavior, to craft chatbots that truly stand out.
+            </p>
           </div>
-          <img src={illustration3} alt='illustration' ></img>
+        </div>
+        <img src={illustration3} alt='illustration' ></img>
       </section>
       <Footer />
     </>

@@ -328,7 +328,7 @@ a {
     background-color: white;
     border-radius: 4rem;
     text-align: center;
-    padding: 5% 5%;
+    padding: 3% 5%;
     color: #14d8b1;
     text-decoration: none;
     z-index: 0;
@@ -734,4 +734,14 @@ a {
     margin-right:0;
     font-weight:600
   }
+}
+
+.love{
+    width: 100vw;
+    text-align: center;
+}
+.call{
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
