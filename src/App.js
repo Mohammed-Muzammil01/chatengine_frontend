@@ -9,6 +9,7 @@ function App() {
     <Routes>
       <Route path='/' element={<LandingPage />} />
       <Route path='/usecase' element={<UseCase/>} />
+      {/* <Route path='/yourbots' element={<You/>} /> */}
       <Route path='/chatbot/:id' element={<Chatbot/>} />      
     </Routes>
   );
