@@ -532,7 +532,7 @@ a {
 .YourChatBot-con{
     background-color: var(--customWhite);
     padding: 4% 10%;
-    min-height: 75vh;
+    min-height: 85vh;
 }
 .YourChatBot-card{
     background-color: var(--customBlue);
@@ -548,12 +548,20 @@ a {
 }
 .YourChatBot-card .right{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: flex-end;
     align-content: flex-end;
     gap: 2rem;
 }
+
+.YourChatBot-card .right div{
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 @media (min-width: 768px) {
     .YourChatBot-card {
         flex-direction: row; /* Change back to row for larger screens */
@@ -566,5 +574,7 @@ a {
 
     .YourChatBot-card .right {
         flex: 1; /* Take 50% of the width */
+        flex-direction: column;
+        justify-content: space-evenly;
     }
 }
