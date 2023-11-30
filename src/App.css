@@ -590,7 +590,7 @@ a {
 /* <!-- Site footer --> */
 .site-footer
 {
-  background-color:#26272b;
+  background-color:var(--customBlue);
   padding:45px 0 20px;
   font-size:15px;
   line-height:24px;
@@ -717,7 +717,7 @@ a {
 .social-icons a:active,.social-icons a:focus,.social-icons a:hover
 {
   color:#fff;
-  background-color:#29aafe
+  background-color: #14d8b1;
 }
 .social-icons.size-sm a
 {
@@ -725,22 +725,6 @@ a {
   height:34px;
   width:34px;
   font-size:14px
-}
-.social-icons a.facebook:hover
-{
-  background-color:#3b5998
-}
-.social-icons a.twitter:hover
-{
-  background-color:#00aced
-}
-.social-icons a.linkedin:hover
-{
-  background-color:#007bb6
-}
-.social-icons a.dribbble:hover
-{
-  background-color:#ea4c89
 }
 @media (max-width:767px)
 {
