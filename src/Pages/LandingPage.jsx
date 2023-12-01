@@ -10,6 +10,7 @@ import { MdOutlineSupportAgent } from "react-icons/md";
 import { VscSettings } from "react-icons/vsc";
 import illustration3 from '../assets/illustration3.svg'
 function LandingPage() {
+  
   const scrollToCreateChatBot = () => {
     const createChatBotSection = document.getElementById('CreateChatBot');
     if (createChatBotSection) {
@@ -83,17 +84,36 @@ function LandingPage() {
         </div>
       </section>
       <section id='section-4' className="section-4">
+
         <div className="priceCard">
           <h1 style={{fontSize:"3rem"}}>$0</h1>
-          <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quisquam sed doloremque ipsam praesentium dolor qui quia sapiente veritatis nam.</h3>
+          <h3>Free Tier</h3>
+          <ul>
+            <li>One Trial  ChatBot</li>
+            <li>Subscription Period - 7 Days</li>
+            <li>No Prompt Support</li>
+          </ul>
+          <button>Buy Now</button>
         </div>
         <div className="priceCard">
           <h1 style={{fontSize:"3rem"}}>$0.99</h1>
-          <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse aperiam nobis, rem nihil itaque totam dolore reprehenderit id maxime perferendis.</h3>
+          <h3>Classic Tier</h3>
+           <ul>
+            <li>Three ChatBots</li>
+            <li>Subscription  Period - 1 month</li>
+            <li>Prompt Support</li>
+           </ul>
+           <button>Buy Now</button>
         </div>
         <div className="priceCard">
           <h1 style={{fontSize:"3rem"}}>$1.99</h1>
-          <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut nemo dolorum non est veritatis sunt ducimus asperiores sint quod labore.</h3>
+          <h3>Elite Tier</h3>
+          <ul>
+            <li>Six ChatBots</li>
+            <li>Subscription Period - 3 Months</li>
+            <li>Prompt Support</li>
+          </ul>
+        <button>Buy Now</button>
         </div>
       </section>
       <section id='section-5' className='section-5'>

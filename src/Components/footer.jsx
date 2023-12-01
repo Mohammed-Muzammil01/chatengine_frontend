@@ -6,7 +6,17 @@ import { MdAddCall } from "react-icons/md";
 import { BiLogoGmail } from "react-icons/bi";
 import { Link } from "react-router-dom"
 
+
+
 const Footer = () => {
+
+        const scrollToCreateChatBot = (id) => {
+          const createChatBotSection = document.getElementById(id);
+          if (createChatBotSection) {
+            createChatBotSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        };
+
     return (
         <footer class="site-footer">
             <div class="container">
@@ -27,11 +37,11 @@ const Footer = () => {
                     <div class="col-xs-6 col-md-3">
                         <h6>Categories</h6>
                         <ul class="footer-links">
-                            <li><Link to="/usecase">Create</Link></li>
-                            <li><a href="#feature-section">Feature</a></li>
-                            <li><a href="#section-3">How to use</a></li>
-                            <li><a href="#section-4">Buy</a></li>
-                            <li><a href="#section-5">About Us</a></li>
+                            <li><Link to="/usecase" >Create</Link></li>
+                            <li><Link onClick={()=>scrollToCreateChatBot("feature-section")}>Feature</Link></li>
+                            <li><Link onClick={()=>scrollToCreateChatBot("section-3")}>How to use</Link></li>
+                            <li><Link onClick={()=>scrollToCreateChatBot("section-4")}>Buy</Link></li>
+                            <li><Link onClick={()=>scrollToCreateChatBot("section-5")}>About Us</Link></li>
 
                         </ul>
                     </div>
