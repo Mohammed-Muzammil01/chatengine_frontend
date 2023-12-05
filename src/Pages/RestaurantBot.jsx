@@ -1,8 +1,25 @@
 
 import Navbar from '../Components/Navbar'
 import Footer from "../Components/Footer"
+import { useEffect, useState } from 'react'
 
 export default function RestaurantBot() {
+
+    const [botName, setBotName] = useState('');
+    const [resName, setResName] = useState('');
+    const [resMenu, setResMenu] = useState('');
+    const [resNum, setresNum] = useState('');
+
+    // useEffect(() => {
+    //     console.log(botName);
+    // }, [botName]);
+
+    const data = {
+        botName,
+        resName,
+        resMenu,
+        resNum
+    }
 
     return (
         <>
@@ -15,27 +32,25 @@ export default function RestaurantBot() {
                 <div className="usecaseForm">
                     <div className="usecase-fields">
                         <label >Bot Name:</label>
-                        <input type="text" />
+                        <input onChange={(e) => setBotName(e.target.value)} type="text" />
                     </div>
 
                     <div className="usecase-fields">
                         <label >Restaurant Name:</label>
-                        <input type="text" />
+                        <input onChange={(e) => setResName(e.target.value)} type="text" required/>
                     </div>
 
 
                     <div className="usecase-fields">
                         <label >Restaurant Menu:</label>
-                        <textarea />
+                        <textarea required onChange={(e) => setResMenu(e.target.value)} />
 
                     </div>
 
                     <div className="usecase-fields">
-                        <label >Restaurant number:</label>
-                        <input type="number" />
+                        <label >Restaurant no.:</label>
+                        <input type="number" onChange={(e) => setresNum(e.target.value)}/>
                     </div>
-
-
 
                 </div>
                 <button className='btn-primary' style={{

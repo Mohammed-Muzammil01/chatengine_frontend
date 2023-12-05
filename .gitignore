@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 
+oauth2-secret.json
+
 # testing
 /coverage
 
