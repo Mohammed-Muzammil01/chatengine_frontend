@@ -322,6 +322,10 @@ a {
 }
 
 .priceCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Align items at the end of the flex container */
+  align-items: center;
   display: block;
   position: relative;
   width: calc(50% - 2rem);
@@ -366,7 +370,10 @@ a {
   border-radius: 1rem;
   border: 2px solid var(--customBlue);
   outline: none;
-margin-top: 5rem;
+  align-self: center;
+  margin-top: 2rem; 
+  margin-bottom: 2rem;
+  
 }
 
 .priceCard button:hover {
@@ -680,6 +687,9 @@ margin-top: 5rem;
 }
 .copyright-text {
   margin: 0;
+}
+.call p{
+  margin:0;
 }
 @media (max-width: 991px) {
   .site-footer [class^="col-"] {
