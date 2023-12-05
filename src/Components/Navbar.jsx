@@ -48,7 +48,7 @@ const toggleMenu = () => {
                       <Link to="/">Contact</Link>
                     </li>
                     <li id='login-link'>
-                      <Link to="/">Sign-up / Login</Link>
+                      <Link to="/login">Sign-up / Login</Link>
                     </li>
                   </ul>
                     </> : ''
@@ -73,7 +73,7 @@ const toggleMenu = () => {
           </div>
           {
             !isMobile ? <div className='signUp'>
-              <Link href='/'>Sign Up / Log In</Link>
+              <Link href='/login'>Sign Up / Log In</Link>
             </div> : ''
           }
         </section>
