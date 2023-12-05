@@ -144,6 +144,9 @@ const LoginSignup = () => {
         
         .social-icons{
             margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         
         .social-icons a{
