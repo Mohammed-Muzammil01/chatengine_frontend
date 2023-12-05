@@ -5,7 +5,7 @@ import UseCase from "./Pages/Usecase.jsx";
 import Chatbot from "./Pages/Chatbot.jsx";
 import YourChatBot from "./Pages/YourChatBot.jsx";
 import UserDetails from "./Pages/UserProfile.jsx";
-
+import LoginSignup from "./Pages/LoginSignup.jsx";
 function App() {
   return (
     <Routes>
@@ -14,6 +14,7 @@ function App() {
       <Route path="/yourbots" element={<YourChatBot />} />
       <Route path="/chatbot/:id" element={<Chatbot />} />
       <Route path="/userdetails" element={<UserDetails />} />
+      <Route path="/login" element={<LoginSignup />} />
     </Routes>
   );
 }

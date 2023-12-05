@@ -138,7 +138,7 @@ function LandingPage() {
           <ul>
             <li>One Trial ChatBot</li>
             <li>Subscription Period - 7 Days</li>
-            <li>No Prompt Support</li>
+            <li>No Prompt Assistance</li>
           </ul>
           <button>Buy Now</button>
         </div>
@@ -148,7 +148,7 @@ function LandingPage() {
           <ul>
             <li>Three ChatBots</li>
             <li>Subscription Period - 1 month</li>
-            <li>Prompt Support</li>
+            <li>Prompt Assistance</li>
           </ul>
           <button>Buy Now</button>
         </div>
@@ -158,7 +158,7 @@ function LandingPage() {
           <ul>
             <li>Six ChatBots</li>
             <li>Subscription Period - 3 Months</li>
-            <li>Prompt Support</li>
+            <li>Prompt Assistance</li>
           </ul>
           <button>Buy Now</button>
         </div>
