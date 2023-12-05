@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import { FaFacebookF } from "react-icons/fa";
-import { FaGooglePlusG } from "react-icons/fa";
-import { FaLinkedinIn } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
+import { FaGoogle } from "react-icons/fa";
 
 const LoginSignup = () => {
   const [isSignUpActive, setIsSignUpActive] = useState(true);
@@ -228,59 +225,41 @@ const LoginSignup = () => {
       `}
     </style>
     <div className={`container ${isSignUpActive ? 'active' : ''}`} id="container">
-      <div className="form-container sign-up">
-        <form>
-          <h1>Create Account</h1>
-          <div className="social-icons">
-            <a href="#" className="icon"><FaGooglePlusG /></a>
-            <a href="#" className="icon"><FaFacebookF  /></a>
-            <a href="#" className="icon"><FaGithub /></a>
-            <a href="#" className="icon"><FaLinkedinIn /></a>
-          </div>
-          <span>or use your email for registration</span>
-          <input type="text" placeholder="Name" />
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <button>Sign Up</button>
-        </form>
-      </div>
-      <div className="form-container sign-in">
-        <form>
-          <h1>Sign In</h1>
-          <div className="social-icons">
-            <a href="#" className="icon"><FaGooglePlusG/></a>
-            <a href="#" className="icon"><FaFacebookF /></a>
-            <a href="#" className="icon"><FaGithub /></a>
-            <a href="#" className="icon"><FaLinkedinIn /></a>
-          </div>
-          <span>or use your email password</span>
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <a href="#">Forget Your Password?</a>
-          <button>Sign In</button>
-        </form>
-      </div>
-      <div className="toggle-container">
-        <div className="toggle">
-          <div className={`toggle-panel ${isSignUpActive ? 'toggle-left' : 'toggle-right'}`}>
-            {isSignUpActive ? (
-              <>
-                <h1>Welcome Back!</h1>
-                <p>Enter your personal details to use all of the site features</p>
-              </>
-            ) : (
-              <>
-                <h1>Hello, Friend!</h1>
-                <p>Register with your personal details to use all of the site features</p>
-              </>
-            )}
-            <button onClick={togglePanel}>
-              {isSignUpActive ? 'Sign In' : 'Sign Up'}
-            </button>
+        <div className={`form-container ${isSignUpActive ? 'sign-up' : 'sign-in'}`}>
+          <form>
+            <h1>{isSignUpActive ? 'Create Account' : 'Sign In'}</h1>
+            <div className="social-icons">
+              <span>{isSignUpActive ? 'Sign Up' : 'Sign In'} with Google</span>
+              <a href="#" className="icons"><FaGoogle style={{fontSize:"1.5rem"}} /></a>
+            </div>
+            <span>{isSignUpActive ? 'or use your email for registration' : 'or use your email password'}</span>
+            {isSignUpActive && <input type="text" placeholder="Name" />}
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+            <button>{isSignUpActive ? 'Sign Up' : 'Sign In'}</button>
+          </form>
+        </div>
+        <div className="toggle-container">
+          <div className="toggle">
+            <div className={`toggle-panel ${isSignUpActive ? 'toggle-left' : 'toggle-right'}`}>
+              {isSignUpActive ? (
+                <>
+                  <h1>Welcome Back!</h1>
+                  <p>Enter your personal details to use all of the site features</p>
+                </>
+              ) : (
+                <>
+                  <h1>Hello, Friend!</h1>
+                  <p>Register with your personal details to use all of the site features</p>
+                </>
+              )}
+              <button onClick={togglePanel}>
+                {isSignUpActive ? 'Sign In' : 'Sign Up'}
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </>
   );
 }
