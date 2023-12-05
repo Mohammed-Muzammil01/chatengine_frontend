@@ -1,9 +1,25 @@
 
 import Navbar from '../Components/Navbar'
 import Footer from "../Components/Footer"
+import { useState } from 'react'
 
 export default function CustomerServiceBot() {
 
+    const [botName, setBotName] = useState('');
+    const [company, setCompany] = useState('');
+    const [about, setAbout] = useState('');
+    const [phnum, setPhnum] = useState('');
+    const [email, setEmail] = useState('');
+    const [faqs, setFaqs] = useState('');
+
+    const data = {
+        botName,
+        company,
+        about,
+        phnum,
+        email,
+        faqs
+    }
     return (
         <>
             <Navbar />
@@ -15,35 +31,35 @@ export default function CustomerServiceBot() {
                 <div className="usecaseForm">
                     <div className="usecase-fields">
                         <label >Bot Name:</label>
-                        <input type="text" />
+                        <input type="text" onChange={(e)=>setBotName(e.target.value)} />
                     </div>
 
                     <div className="usecase-fields">
                         <label >Company Name:</label>
-                        <input type="text" />
+                        <input type="text" required onChange={(e)=>setCompany(e.target.value)} />
                     </div>
 
 
                     <div className="usecase-fields">
                         <label >Company About:</label>
-                        <textarea />
+                        <textarea onChange={(e)=>setAbout(e.target.value)}/>
 
                     </div>
 
                     <div className="usecase-fields">
                         <label >Help Desk No.:</label>
-                        <input type="number" />
+                        <input type="number" required onChange={(e)=>setPhnum(e.target.value)} />
                     </div>
 
 
                     <div className="usecase-fields">
                         <label >Email:</label>
-                        <input type="email" />
+                        <input type="email" required onChange={(e)=>setEmail(e.target.value)} />
                     </div>
 
                     <div className="usecase-fields">
                         <label >FAQs:</label>
-                        <textarea />
+                        <textarea onChange={(e)=>setFaqs(e.target.value)}/>
 
                     </div>
 

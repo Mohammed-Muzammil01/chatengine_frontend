@@ -1,7 +1,7 @@
 
 import Navbar from '../Components/Navbar'
 import Footer from "../Components/Footer"
-import { useEffect, useState } from 'react'
+import {  useState } from 'react'
 
 export default function RestaurantBot() {
 
@@ -10,9 +10,6 @@ export default function RestaurantBot() {
     const [resMenu, setResMenu] = useState('');
     const [resNum, setresNum] = useState('');
 
-    // useEffect(() => {
-    //     console.log(botName);
-    // }, [botName]);
 
     const data = {
         botName,
