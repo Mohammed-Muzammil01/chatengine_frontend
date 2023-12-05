@@ -800,3 +800,31 @@ a {
   margin-top: 20px;
   color: #888;
 }
+
+/* usecase page */
+
+.usecaseForm-container{
+  background-color: var(--customWhite);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.usecase-fields{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem;
+}
+
+.usecase-fields label{
+  /* margin: 0 1rem; */
+  color:var(--customBlue);
+  
+}
+
+.usecase-fields input ,textarea{
+  float: right;
+}
