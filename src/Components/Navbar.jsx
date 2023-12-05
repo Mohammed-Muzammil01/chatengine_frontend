@@ -73,7 +73,7 @@ const toggleMenu = () => {
           </div>
           {
             !isMobile ? <div className='signUp'>
-              <Link href='/login'>Sign Up / Log In</Link>
+              <Link to='/login'>Sign Up / Log In</Link>
             </div> : ''
           }
         </section>
