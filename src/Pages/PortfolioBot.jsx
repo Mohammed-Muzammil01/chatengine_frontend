@@ -34,7 +34,8 @@ export default function PortfolioBot() {
         city,
         phnum,
         email,
-        extras
+        extras,
+        type: "pBot", 
     }
 
     return (

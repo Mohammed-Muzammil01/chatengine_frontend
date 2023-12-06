@@ -15,7 +15,8 @@ export default function RestaurantBot() {
         botName,
         resName,
         resMenu,
-        resNum
+        resNum,
+        type: "rBot",
     }
 
     return (
@@ -36,7 +37,6 @@ export default function RestaurantBot() {
                         <label >Restaurant Name:</label>
                         <input onChange={(e) => setResName(e.target.value)} type="text" required/>
                     </div>
-
 
                     <div className="usecase-fields">
                         <label >Restaurant Menu:</label>

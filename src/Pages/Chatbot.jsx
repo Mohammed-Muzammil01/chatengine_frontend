@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Logo from '../assets/logo192.png';
+import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer';
 
 
 const Chatbot = () => {
@@ -11,7 +13,7 @@ const Chatbot = () => {
     const [conversation, setConversation] = useState([]);
     const [inputMessage, setInputMessage] = useState('');
     const systemMessage = {
-        "role": "system", "content": "you are a menk. a helpful assisstant"
+        "role": "system", "content": "you are menk. a helpful assisstant"
       }
 
     const handleSend = async(e) => {
@@ -40,8 +42,8 @@ const Chatbot = () => {
         const apiRequestBody = {
           "model": "gpt-3.5-turbo",
           "messages": [
-            systemMessage,  
-            ...apiMessages 
+            systemMessage,
+            ...apiMessages
           ]
         }
     
@@ -80,6 +82,9 @@ const Chatbot = () => {
     
 
     return (
+        <>
+      <Navbar />
+
         <div className="chatbot-container">
             <div className="chatbot-box">
                 <div className="chatbot-header">
@@ -119,6 +124,8 @@ const Chatbot = () => {
                 </div>
             </div>
         </div>
+        <Footer />
+        </>
     );
 };
 

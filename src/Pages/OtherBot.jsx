@@ -1,17 +1,28 @@
-
 import Navbar from '../Components/Navbar'
 import Footer from "../Components/Footer"
 import { useState } from 'react'
+import axios from 'axios'
 
 export default function OtherBot() {
-
     const [botName, setBotName] = useState('');
     const [botIntent, setBotIntent] = useState('');
     
     const data = {
         botName,
-        botIntent
+        botIntent,
+        type: "oBot",
     }
+
+    const createChatBot = async(e) => {
+        e.preventDefault();
+        try {
+            const res = await axios.post("http://localhost:5000/chatbot/createChatBot", data);
+            console.log(res);
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return (
         <>
             <Navbar />
@@ -33,14 +44,15 @@ export default function OtherBot() {
                     </div>
 
                 </div>
-                <button className='btn-primary' style={{
+                <button className='btn-primary'
+                onClick={createChatBot}
+                style={{
                     marginTop: "10px",
                     padding: "10px",
                     fontSize: "1.2rem",
                     borderRadius: "12px",
                     backgroundColor: "#223c4b",
                     border: "none",
-                    // border: "2px solid black",
                     color: "var(--customGreen)",
                     transition: "background-color 0.3s, color 0.3s",
                     marginBottom:"2rem"

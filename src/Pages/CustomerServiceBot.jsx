@@ -18,7 +18,8 @@ export default function CustomerServiceBot() {
         about,
         phnum,
         email,
-        faqs
+        faqs,
+        type: "csBot",
     }
     return (
         <>

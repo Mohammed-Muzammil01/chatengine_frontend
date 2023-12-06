@@ -34,7 +34,7 @@ function App() {
     <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route path="/usecase" element={<UseCase />} />
-      <Route path="/yourbots" element={user ? <YourChatBot /> : ''} />
+      <Route path="/yourbots" element={ <YourChatBot /> } />
       <Route path="/chatbot/:id" element={<Chatbot />}/>
       <Route path="/userdetails" element={user ? <UserDetails /> : ''} />
       <Route path="/login" element={<LoginSignup />} />

@@ -571,7 +571,7 @@ a {
 .YourChatBot-con {
   background-color: var(--customWhite);
   padding: 4% 10%;
-  min-height: 85vh;
+  min-height: 100vh;
 }
 .YourChatBot-card {
   background-color: var(--customBlue);
@@ -584,6 +584,8 @@ a {
   flex-direction: column;
   justify-content: space-between;
   margin-top: 2rem;
+  height: auto;
+  overflow: hidden;
 }
 .YourChatBot-card .right {
   display: flex;
