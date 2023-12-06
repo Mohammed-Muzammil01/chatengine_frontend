@@ -1,17 +1,15 @@
-import React, { useEffect } from "react";
-// import { FaGoogle } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
 import login1 from "../assets/login1.svg";
 import login2 from "../assets/login2.svg";
-// import GoogleButton from 'react-google-button'
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const LoginSignup = () => {
 
-  // const googleAuth = () => {
-  //   window.open(
-  //     `http://localhost:5000/auth/google/callback`,
-  //     "_self"
-  //   );
-  // }
+  const [username, setUsername] = useState('');
+  const [pass, setPass] = useState('');
+  const [email, setEmail] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     const sign_in_btn = document.querySelector("#sign-in-btn");
@@ -26,7 +24,6 @@ const LoginSignup = () => {
       container.classList.remove("sign-up-mode");
     });
 
-    // Cleanup event listeners on component unmount
     return () => {
       sign_up_btn.removeEventListener("click", () => {
         container.classList.add("sign-up-mode");
@@ -37,6 +34,45 @@ const LoginSignup = () => {
       });
     };
   }, []);
+
+  const registerData = {
+    username,
+    email,
+    pass
+  }
+
+  const loginData = {
+    username,
+    pass
+  }
+
+  const login = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post("http://localhost:5000/login", loginData);
+      localStorage.setItem("user", res.data.token);
+      if(res.status === 200){
+        navigate('/');
+        window.location.reload();
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const register = async(e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post("http://localhost:5000/register", registerData);
+      localStorage.setItem("user", res.data.token);
+      if(res.status === 201){
+        navigate('/');
+        window.location.reload();
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
     <>
@@ -442,41 +478,31 @@ const LoginSignup = () => {
               <h2 className="title">Sign in</h2>
               <div className="input-field">
                 <i className="fas fa-user"></i>
-                <input type="text" placeholder="Username" />
+                <input type="text" placeholder="Username" onChange={(e) => setUsername(e.target.value)} />
               </div>
               <div className="input-field">
                 <i className="fas fa-lock"></i>
-                <input type="password" placeholder="Password" />
+                <input type="password" placeholder="Password" onChange={(e) => setPass(e.target.value)} />
               </div>
-              <input type="submit" value="Login" className="btn solid" />
+              <input type="submit" value="Login" className="btn solid" onClick={login} />
               <p className="social-text">Or Sign in with social platforms</p>
-              <div className="social-media">
-                {/* <GoogleButton
-                  onClick={googleAuth}
-                /> */}
-              </div>
             </form>
             <form action="#" className="sign-up-form">
               <h2 className="title">Sign up</h2>
               <div className="input-field">
                 <i className="fas fa-user"></i>
-                <input type="text" placeholder="Username" />
+                <input type="text" placeholder="Username" onChange={(e) => setUsername(e.target.value)} />
               </div>
               <div className="input-field">
                 <i className="fas fa-envelope"></i>
-                <input type="email" placeholder="Email" />
+                <input type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
               </div>
               <div className="input-field">
                 <i className="fas fa-lock"></i>
-                <input type="password" placeholder="Password" />
+                <input type="password" placeholder="Password" onChange={(e) => setPass(e.target.value)} />
               </div>
-              <input type="submit" className="btn" value="Sign up" />
+              <input type="submit" className="btn" value="Sign up" onClick={register} />
               <p className="social-text">Or Sign up with social platforms</p>
-              <div className="social-media">
-                {/* <GoogleButton
-                  onClick={googleAuth}
-                /> */}
-              </div>
             </form>
           </div>
         </div>
@@ -508,7 +534,7 @@ const LoginSignup = () => {
           </div>
         </div>
       </div>
-      );
+      
     </>
   );
 };

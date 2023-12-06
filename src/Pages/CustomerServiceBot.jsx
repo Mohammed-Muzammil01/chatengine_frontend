@@ -2,6 +2,7 @@
 import Navbar from '../Components/Navbar'
 import Footer from "../Components/Footer"
 import { useState } from 'react'
+import axios from 'axios';
 
 export default function CustomerServiceBot() {
 
@@ -12,6 +13,8 @@ export default function CustomerServiceBot() {
     const [email, setEmail] = useState('');
     const [faqs, setFaqs] = useState('');
 
+const user = localStorage.getItem("user");
+
     const data = {
         botName,
         company,
@@ -21,6 +24,21 @@ export default function CustomerServiceBot() {
         faqs,
         type: "csBot",
     }
+
+    const createChatBot = async(e) => {
+        e.preventDefault();
+        try {
+            const res = await axios.post("http://localhost:5000/chatbot/createChatBot", data, {
+                headers: {
+                  Authorization: `${user}`,
+                },
+              });
+            console.log(res);
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return (
         <>
             <Navbar />
@@ -67,14 +85,15 @@ export default function CustomerServiceBot() {
 
 
                 </div>
-                <button className='btn-primary' style={{
+                <button className='btn-primary' 
+                onClick={createChatBot}
+                style={{
                     marginTop: "10px",
                     padding: "10px",
                     fontSize: "1.2rem",
                     borderRadius: "12px",
                     backgroundColor: "#223c4b",
                     border: "none",
-                    // border: "2px solid black",
                     color: "var(--customGreen)",
                     transition: "background-color 0.3s, color 0.3s",
                     marginBottom:"2rem"

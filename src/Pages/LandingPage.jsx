@@ -57,7 +57,7 @@ function LandingPage(userData) {
           Create commercial or personal chatbots, such as chatGPT, to optimize
           your workload, increase efficiency and cut costs.
         </div>
-        <Link to="/">
+        <Link to="/usecase">
           <button
             className="btn-primary"
             style={{
@@ -67,7 +67,6 @@ function LandingPage(userData) {
               borderRadius: "12px",
               backgroundColor: "#223c4b",
               border: "none",
-              // border: "2px solid black",
               color: "var(--customGreen)",
               transition: "background-color 0.3s, color 0.3s",
             }}

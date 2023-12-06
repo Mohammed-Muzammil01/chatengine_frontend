@@ -2,19 +2,18 @@ import React, { useEffect, useState } from 'react'
 import Logo from '../assets/CElogo1.png'
 import { Link } from 'react-router-dom'
 
-function Navbar(user) {
+function Navbar() {
 
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-  const logout = () => {
-    window.open(
-      `${process.env.REACT_APP_API_URL}/auth/google/callback`,
-      "_self"
-    );
+  const user = localStorage.getItem("user");
+  
+  const logout = (e) => {
+   e.preventDefault();
+   localStorage.removeItem("user");
+   window.location.reload();
   }
-  // useEffect(() => {
-  //   console.log(user);
-  // }, [user]);
+ 
   useEffect(() => {
     console.log(isMobile); 
     const handleResize = () => {
@@ -81,7 +80,7 @@ const toggleMenu = () => {
           </div>
           {
             !isMobile ? <div className='signUp'>
-            {user.user ? <Link onClick={logout}>Logout</Link> : <Link to='/login'>Sign Up / Log In</Link>}
+            {user ? <Link onClick={logout}>Logout</Link> : <Link to='/login'>Sign Up / Log In</Link>}
           </div> : ''
           }
         </section>

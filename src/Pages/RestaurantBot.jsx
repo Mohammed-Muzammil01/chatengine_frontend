@@ -1,7 +1,7 @@
-
 import Navbar from '../Components/Navbar'
 import Footer from "../Components/Footer"
 import { useState } from 'react'
+import axios from 'axios';
 
 export default function RestaurantBot() {
 
@@ -10,6 +10,7 @@ export default function RestaurantBot() {
     const [resMenu, setResMenu] = useState('');
     const [resNum, setresNum] = useState('');
 
+    const user = localStorage.getItem("user");
 
     const data = {
         botName,
@@ -17,6 +18,20 @@ export default function RestaurantBot() {
         resMenu,
         resNum,
         type: "rBot",
+    }
+
+    const createChatBot = async(e) => {
+        e.preventDefault();
+        try {
+            const res = await axios.post("http://localhost:5000/chatbot/createChatBot", data, {
+                headers: {
+                  Authorization: `${user}`,
+                },
+              });
+            console.log(res);
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     return (
@@ -50,7 +65,9 @@ export default function RestaurantBot() {
                     </div>
 
                 </div>
-                <button className='btn-primary' style={{
+                <button className='btn-primary'
+                onClick={createChatBot}
+                style={{
                     marginTop: "10px",
                     padding: "10px",
                     fontSize: "1.2rem",

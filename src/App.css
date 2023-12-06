@@ -18,6 +18,10 @@ a {
   color: var(--customGreen);
 }
 
+a:hover{
+  text-decoration: none;
+}
+
 .header {
   background-color: var(--customBlue);
   height: 10vh;

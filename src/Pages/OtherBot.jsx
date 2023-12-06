@@ -7,6 +7,8 @@ export default function OtherBot() {
     const [botName, setBotName] = useState('');
     const [botIntent, setBotIntent] = useState('');
     
+    const user = localStorage.getItem("user");
+
     const data = {
         botName,
         botIntent,
@@ -16,7 +18,11 @@ export default function OtherBot() {
     const createChatBot = async(e) => {
         e.preventDefault();
         try {
-            const res = await axios.post("http://localhost:5000/chatbot/createChatBot", data);
+            const res = await axios.post("http://localhost:5000/chatbot/createChatBot", data,{
+                headers: {
+                  Authorization: `${user}`,
+                },
+              });
             console.log(res);
         } catch (error) {
             console.log(error)

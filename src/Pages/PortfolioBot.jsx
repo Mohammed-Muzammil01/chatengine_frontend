@@ -1,4 +1,4 @@
-
+import axios from 'axios';
 import Navbar from '../Components/Navbar'
 import Footer from "../Components/Footer"
 import { useState } from 'react'
@@ -20,6 +20,8 @@ export default function PortfolioBot() {
     const [email, setEmail] = useState("");
     const [extras, setExtras] = useState("");
 
+    const user = localStorage.getItem("user");
+
     const data = {
         name,
         designation,
@@ -36,6 +38,20 @@ export default function PortfolioBot() {
         email,
         extras,
         type: "pBot", 
+    }
+
+    const createChatBot = async(e) => {
+        e.preventDefault();
+        try {
+            const res = await axios.post("http://localhost:5000/chatbot/createChatBot", data,{
+                headers: {
+                  Authorization: `${user}`,
+                },
+              });
+            console.log(res);
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     return (
@@ -120,7 +136,9 @@ export default function PortfolioBot() {
 
 
                 </div>
-                <button className='btn-primary' style={{
+                <button className='btn-primary' 
+                onClick={createChatBot}
+                style={{
                     marginTop: "10px",
                     padding: "10px",
                     fontSize: "1.2rem",

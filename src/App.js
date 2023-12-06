@@ -10,38 +10,23 @@ import PortfolioBot from "./Pages/PortfolioBot.jsx";
 import OtherBot from "./Pages/OtherBot.jsx";
 import RestaurantBot from "./Pages/RestaurantBot.jsx";
 import CustomerServiceBot from "./Pages/CustomerServiceBot.jsx";
-import { useState } from "react";
 
 function App() {
 
-  const [user, setUser] = useState('');
-  // const getUser = async () => {
-  //   try {
-  //     const url = `${process.env.REACT_APP_API_URL}/auth/login/success`;
-  //     const {data} = await axios.get(url, {withCredentials: true});
-  //     setUser(data.user && data.user._json);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // } 
-
-  // useEffect(() => {
-  //   getUser();
-  //   console.log(user);
-  // }, []);
+  const user = localStorage.getItem("user");
 
   return (
     <Routes>
       <Route path="/" element={<LandingPage />} />
-      <Route path="/usecase" element={<UseCase />} />
+      <Route path="/usecase" element={user ? <UseCase /> : <LoginSignup />} />
       <Route path="/yourbots" element={ <YourChatBot /> } />
       <Route path="/chatbot/:id" element={<Chatbot />}/>
       <Route path="/userdetails" element={user ? <UserDetails /> : ''} />
-      <Route path="/login" element={<LoginSignup />} />
-      <Route path="/portfoliobot" element={<PortfolioBot />} />
-      <Route path="/otherbot" element={<OtherBot />} />
-      <Route path="/restaurantbot" element={<RestaurantBot />} />
-      <Route path="/customerservicebot" element={<CustomerServiceBot />} />
+      <Route path="/login" element={!user ? <LoginSignup /> : ''} />
+      <Route path="/usecase/portfoliobot" element={user ? <PortfolioBot />: <LoginSignup /> } />
+      <Route path="/usecase/otherbot" element={user ? <OtherBot /> : <LoginSignup />} />
+      <Route path="/usecase/restaurantbot" element={user ? <RestaurantBot /> : <LoginSignup />} />
+      <Route path="/usecase/customerservicebot" element={user ? <CustomerServiceBot /> : <LoginSignup />} />
     </Routes>
   );
 }
