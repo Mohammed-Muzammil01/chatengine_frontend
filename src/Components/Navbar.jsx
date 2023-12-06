@@ -2,13 +2,21 @@ import React, { useEffect, useState } from 'react'
 import Logo from '../assets/CElogo1.png'
 import { Link } from 'react-router-dom'
 
-function Navbar() {
+function Navbar(user) {
 
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-
+  const logout = () => {
+    window.open(
+      `${process.env.REACT_APP_API_URL}/auth/google/callback`,
+      "_self"
+    );
+  }
+  // useEffect(() => {
+  //   console.log(user);
+  // }, [user]);
   useEffect(() => {
-    console.log(isMobile);
+    console.log(isMobile); 
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
@@ -73,8 +81,8 @@ const toggleMenu = () => {
           </div>
           {
             !isMobile ? <div className='signUp'>
-              <Link to='/login'>Sign Up / Log In</Link>
-            </div> : ''
+            {user.user ? <Link onClick={logout}>Logout</Link> : <Link to='/login'>Sign Up / Log In</Link>}
+          </div> : ''
           }
         </section>
       </div>

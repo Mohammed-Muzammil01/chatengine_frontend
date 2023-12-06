@@ -1,8 +1,18 @@
-import React, {  useEffect } from "react";
-import { FaGoogle } from "react-icons/fa";
+import React, { useEffect } from "react";
+// import { FaGoogle } from "react-icons/fa";
 import login1 from "../assets/login1.svg";
 import login2 from "../assets/login2.svg";
+// import GoogleButton from 'react-google-button'
+
 const LoginSignup = () => {
+
+  // const googleAuth = () => {
+  //   window.open(
+  //     `http://localhost:5000/auth/google/callback`,
+  //     "_self"
+  //   );
+  // }
+
   useEffect(() => {
     const sign_in_btn = document.querySelector("#sign-in-btn");
     const sign_up_btn = document.querySelector("#sign-up-btn");
@@ -441,9 +451,9 @@ const LoginSignup = () => {
               <input type="submit" value="Login" className="btn solid" />
               <p className="social-text">Or Sign in with social platforms</p>
               <div className="social-media">
-                <a href="/" className="social-icon">
-                  <FaGoogle />
-                </a>
+                {/* <GoogleButton
+                  onClick={googleAuth}
+                /> */}
               </div>
             </form>
             <form action="#" className="sign-up-form">
@@ -463,12 +473,9 @@ const LoginSignup = () => {
               <input type="submit" className="btn" value="Sign up" />
               <p className="social-text">Or Sign up with social platforms</p>
               <div className="social-media">
-                
-              
-                <a href="/" className="social-icon">
-                  <FaGoogle />
-                
-                </a>
+                {/* <GoogleButton
+                  onClick={googleAuth}
+                /> */}
               </div>
             </form>
           </div>
@@ -479,7 +486,7 @@ const LoginSignup = () => {
             <div className="content">
               <h3>New here ?</h3>
               <p>
-              Register with your personal details to use all of the site features.
+                Register with your personal details to use all of the site features.
               </p>
               <button className="btn transparent" id="sign-up-btn">
                 Sign up
@@ -491,7 +498,7 @@ const LoginSignup = () => {
             <div className="content">
               <h3>One of us ?</h3>
               <p>
-              Enter your personal details to use all of the site features.
+                Enter your personal details to use all of the site features.
               </p>
               <button className="btn transparent" id="sign-in-btn">
                 Sign in

@@ -9,7 +9,11 @@ import { MdLanguage } from "react-icons/md";
 import { MdOutlineSupportAgent } from "react-icons/md";
 import { VscSettings } from "react-icons/vsc";
 import illustration3 from "../assets/illustration3.svg";
-function LandingPage() {
+
+function LandingPage(userData) {
+
+  const user = userData.user;
+
   const scrollToCreateChatBot = () => {
     const createChatBotSection = document.getElementById("CreateChatBot");
     if (createChatBotSection) {
@@ -19,7 +23,7 @@ function LandingPage() {
 
   return (
     <>
-      <Navbar />
+      <Navbar user={user}/>
 
       <section
         style={{ paddingTop: "4vh" }}

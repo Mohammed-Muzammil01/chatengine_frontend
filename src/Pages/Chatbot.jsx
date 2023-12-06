@@ -1,31 +1,74 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Logo from '../assets/logo192.png';
 
+
 const Chatbot = () => {
-    const [messages, setMessages] = useState([]);
+    const API_KEY = process.env.REACT_APP_openai_secret_key;
+
     const [isListening, setListening] = useState(false);
     const chatContainerRef = useRef(null);
 
-    const simulateChatbotResponse = (userInput) => {
-        const chatbotResponse = `Chatbot: I heard you say "${userInput}"`;
-        const userMessage = `You: ${userInput}`;
+    const [conversation, setConversation] = useState([]);
+    const [inputMessage, setInputMessage] = useState('');
+    const systemMessage = {
+        "role": "system", "content": "you are a menk. a helpful assisstant"
+      }
 
-        setListening(false);
-        setMessages([
-            ...messages,
-            { text: userMessage, type: 'user-input' },
-            { text: chatbotResponse, type: 'chatbot' },
-        ]);
-    };
-
-    const handleUserInput = (e) => {
+    const handleSend = async(e) => {
         if (e.key === 'Enter') {
-            simulateChatbotResponse(e.target.value);
-            e.target.value = ''; // Clear the input after submitting
+            const updatedConversation = [...conversation, { message: inputMessage, direction: 'outgoing', sender: 'user' }];
+            setConversation(updatedConversation);
+            setListening(false);   
+            setInputMessage(''); 
+            await processMessageToChatGPT(updatedConversation);
         } else {
             setListening(true);
         }
     };
+
+    async function processMessageToChatGPT(chatMessages) { 
+        let apiMessages = chatMessages.map((messageObject) => {
+          let role = "";
+          if (messageObject.sender === "ChatGPT") {
+            role = "assistant";
+          } else {
+            role = "user";
+          }
+          return { role: role, content: messageObject.message}
+        });
+    
+        const apiRequestBody = {
+          "model": "gpt-3.5-turbo",
+          "messages": [
+            systemMessage,  
+            ...apiMessages 
+          ]
+        }
+    
+        try {
+          const response = await fetch("https://api.openai.com/v1/chat/completions", {
+            method: "POST",
+            headers: {
+              "Authorization": `Bearer ${API_KEY}`,
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(apiRequestBody)
+          });
+        
+          if (!response.ok) {
+            throw new Error("API request failed with status: " + response.status);
+          }
+        
+          const data = await response.json();
+        
+          setConversation([...chatMessages, {
+            message: data.choices[0].message.content,
+            sender: "ChatGPT"
+          }]);
+        } catch (error) {
+          console.error("Error in API call:", error);
+        }
+      }
 
     useEffect(() => {
         // Scroll to the bottom of the chat when new messages are added
@@ -33,7 +76,8 @@ const Chatbot = () => {
             chatContainerRef.current.scrollTop =
                 chatContainerRef.current.scrollHeight;
         }
-    }, [messages]);
+    }, [conversation]);
+    
 
     return (
         <div className="chatbot-container">
@@ -43,18 +87,18 @@ const Chatbot = () => {
                     <h1 className="tittle">Chatbot Name</h1>
                 </div>
                 <div className="messages-container" ref={chatContainerRef}>
-                    {messages.map((message, index) => (
+                    {conversation.map((message, index) => (
                         <div
                             key={index}
                             className={`message ${
-                                message.type === 'chatbot'
+                                message.sender === 'ChatGPT'
                                     ? 'chatbot-message'
-                                    : message.type === 'user-input'
+                                    : message.sender === 'user'
                                     ? 'user-input-message'
                                     : ''
                             }`}
                         >
-                            {message.text}
+                            {message.message}
                         </div>
                     ))}
                     {isListening && (
@@ -67,8 +111,10 @@ const Chatbot = () => {
                     <input
                         type="text"
                         placeholder="Type your message..."
-                        onKeyUp={handleUserInput}
+                        onChange={(e) => setInputMessage(e.target.value)}
+                        onKeyUp={handleSend}
                         className="input-field"
+                        value={inputMessage}
                     />
                 </div>
             </div>
