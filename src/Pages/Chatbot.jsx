@@ -2,10 +2,27 @@ import React, { useState, useEffect, useRef } from 'react';
 import Logo from '../assets/logo192.png';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 
 const Chatbot = () => {
     const API_KEY = process.env.REACT_APP_openai_secret_key;
+    const {id} = useParams();
+    const [botData, setBotData] = useState();
+
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const response = await axios.get(`http://localhost:5000/chatbot/getChatBot/${id}`);
+          setBotData(response.data);
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
+      };
+    
+      fetchData();
+    }, []);
 
     const [isListening, setListening] = useState(false);
     const chatContainerRef = useRef(null);
@@ -13,9 +30,8 @@ const Chatbot = () => {
     const [conversation, setConversation] = useState([]);
     const [inputMessage, setInputMessage] = useState('');
     const systemMessage = {
-        "role": "system", "content": "you are menk. a helpful assisstant"
+        "role": "system", "content": botData?.botIntent
       }
-
     const handleSend = async(e) => {
         if (e.key === 'Enter') {
             const updatedConversation = [...conversation, { message: inputMessage, direction: 'outgoing', sender: 'user' }];

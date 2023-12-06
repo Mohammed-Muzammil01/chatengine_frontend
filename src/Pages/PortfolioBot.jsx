@@ -2,6 +2,7 @@ import axios from 'axios';
 import Navbar from '../Components/Navbar'
 import Footer from "../Components/Footer"
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 export default function PortfolioBot() {
 
@@ -21,6 +22,7 @@ export default function PortfolioBot() {
     const [extras, setExtras] = useState("");
 
     const user = localStorage.getItem("user");
+    const navigate = useNavigate();
 
     const data = {
         name,
@@ -48,7 +50,7 @@ export default function PortfolioBot() {
                   Authorization: `${user}`,
                 },
               });
-            console.log(res);
+            navigate("/yourbots");
         } catch (error) {
             console.log(error)
         }

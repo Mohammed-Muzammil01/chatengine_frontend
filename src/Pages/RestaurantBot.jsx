@@ -2,6 +2,7 @@ import Navbar from '../Components/Navbar'
 import Footer from "../Components/Footer"
 import { useState } from 'react'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export default function RestaurantBot() {
 
@@ -11,6 +12,7 @@ export default function RestaurantBot() {
     const [resNum, setresNum] = useState('');
 
     const user = localStorage.getItem("user");
+    const navigate = useNavigate();
 
     const data = {
         botName,
@@ -28,7 +30,7 @@ export default function RestaurantBot() {
                   Authorization: `${user}`,
                 },
               });
-            console.log(res);
+            navigate("/yourbots");
         } catch (error) {
             console.log(error)
         }

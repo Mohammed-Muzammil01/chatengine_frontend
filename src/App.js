@@ -19,7 +19,7 @@ function App() {
     <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route path="/usecase" element={user ? <UseCase /> : <LoginSignup />} />
-      <Route path="/yourbots" element={ <YourChatBot /> } />
+      <Route path="/yourbots" element={ user ? <YourChatBot /> : <LoginSignup /> } />
       <Route path="/chatbot/:id" element={<Chatbot />}/>
       <Route path="/userdetails" element={user ? <UserDetails /> : ''} />
       <Route path="/login" element={!user ? <LoginSignup /> : ''} />

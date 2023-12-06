@@ -15,7 +15,6 @@ function Navbar() {
   }
  
   useEffect(() => {
-    console.log(isMobile); 
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
@@ -48,6 +47,11 @@ const toggleMenu = () => {
                     <li>
                       <Link to="/usecase">Create</Link>
                     </li>
+                    {
+                      user ? <li>
+                      <Link to="/yourbots">My Chatbots</Link>
+                    </li> : ''
+                    }
                     <li>
                       <Link to="/">Features</Link>
                     </li>
@@ -55,7 +59,7 @@ const toggleMenu = () => {
                       <Link to="/">Contact</Link>
                     </li>
                     <li id='login-link'>
-                      <Link to="/login">Sign-up / Login</Link>
+                      {user ? <Link onClick={logout}>Logout</Link> : <Link to="/login">Sign-up / Login</Link>}
                     </li>
                   </ul>
                     </> : ''
@@ -66,6 +70,11 @@ const toggleMenu = () => {
                     <li>
                       <Link to="/usecase">Create</Link>
                     </li>
+                    {
+                      user ? <li>
+                      <Link to="/yourbots">My Chatbots</Link>
+                    </li> : ''
+                    }
                     <li>
                       <Link to="/">Features</Link>
                     </li>

@@ -3,6 +3,7 @@ import Navbar from '../Components/Navbar'
 import Footer from "../Components/Footer"
 import { useState } from 'react'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export default function CustomerServiceBot() {
 
@@ -14,6 +15,7 @@ export default function CustomerServiceBot() {
     const [faqs, setFaqs] = useState('');
 
 const user = localStorage.getItem("user");
+const navigate = useNavigate();
 
     const data = {
         botName,
@@ -33,7 +35,7 @@ const user = localStorage.getItem("user");
                   Authorization: `${user}`,
                 },
               });
-            console.log(res);
+            navigate("/yourbots");
         } catch (error) {
             console.log(error)
         }

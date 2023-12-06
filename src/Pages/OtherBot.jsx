@@ -2,12 +2,15 @@ import Navbar from '../Components/Navbar'
 import Footer from "../Components/Footer"
 import { useState } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
+
 
 export default function OtherBot() {
     const [botName, setBotName] = useState('');
     const [botIntent, setBotIntent] = useState('');
     
     const user = localStorage.getItem("user");
+    const navigate = useNavigate();
 
     const data = {
         botName,
@@ -23,7 +26,7 @@ export default function OtherBot() {
                   Authorization: `${user}`,
                 },
               });
-            console.log(res);
+            navigate("/yourbots");
         } catch (error) {
             console.log(error)
         }
