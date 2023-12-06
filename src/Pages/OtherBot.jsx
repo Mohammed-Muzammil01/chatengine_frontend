@@ -1,9 +1,17 @@
 
 import Navbar from '../Components/Navbar'
 import Footer from "../Components/Footer"
+import { useState } from 'react'
 
 export default function OtherBot() {
 
+    const [botName, setBotName] = useState('');
+    const [botIntent, setBotIntent] = useState('');
+    
+    const data = {
+        botName,
+        botIntent
+    }
     return (
         <>
             <Navbar />
@@ -15,12 +23,12 @@ export default function OtherBot() {
                 <div className="usecaseForm">
                     <div className="usecase-fields">
                         <label >Bot Name:</label>
-                        <input type="text" />
+                        <input type="text"onChange={(e)=>setBotName(e.target.value)} />
                     </div>
 
                     <div className="usecase-fields">
                         <label >Bot Intent:</label>
-                        <textarea />
+                        <textarea required onChange={(e)=>setBotIntent(e.target.value)}/>
 
                     </div>
 

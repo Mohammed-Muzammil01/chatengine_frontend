@@ -10,9 +10,6 @@ export default function RestaurantBot() {
     const [resMenu, setResMenu] = useState('');
     const [resNum, setresNum] = useState('');
 
-    // useEffect(() => {
-    //     console.log(botName);
-    // }, [botName]);
 
     const data = {
         botName,
